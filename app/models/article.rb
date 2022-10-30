@@ -1,13 +1,15 @@
+require_relative './author.rb'
+require_relative './magazine.rb'
+
 class Article
 
-    
+    attr_accessor :author, :magazine, :title
 
-    attr_accessor :title
-    
-    @title = title
     @all = []
 
-    def initialize(title)
+    def initialize(author, magazine, title)
+        @author = author
+        @magazine = magazine
         @title = title
         @all << []
     end
