@@ -5,21 +5,30 @@ class Article
 
     attr_accessor :author, :magazine, :title
 
-    @all = []
+    @@all = []
 
     def initialize(author, magazine, title)
         @author = author
         @magazine = magazine
         @title = title
-        @all << []
+        @@all << self
     end
 
-    def article_title
+    def title
         @title
     end
 
-    def all_articles
-        @all
+    def author
+        @author
+    end
+
+    def magazine
+        @magazine
+    end
+
+
+    def self.all
+        @@all
     end
 
 end
