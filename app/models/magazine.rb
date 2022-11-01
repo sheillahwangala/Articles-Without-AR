@@ -16,7 +16,7 @@ class Magazine
   end
 
   # helper function
-  def mag_aticles
+  def mag_articles
     Article.all.select{|article| article.magazine.name == self.name}
   end
 
@@ -28,7 +28,7 @@ class Magazine
   # to return first magazine object that matches given a string of magazine's names
   def self.find_by_name(name)
     magazine_found = self.all.select { |magazine| magazine.name == name}
-    magazines_found.first
+    magazine_found.first
   end
 
   # to return an array of string titles of all articles for a magazine
