@@ -8,26 +8,21 @@ class Author
   
   end
 
-  def name
-    @name
-  end
-
-  # to return articles by author
   def articles
-    Article.all.select {|article| article.author.name == self.name}
+    Article.all.select{|article| article.author.name == self.name}
   end
 
-  # to return unique array of magazine instances by author
   def magazines
-    @magazines=Article.all.select do |article|
-      if article.author.name == self.name
-        article.magazine
-      end
-    end
-    # to get unique magazines
-    @magazines.uniq
-
+    all_magazines = articles.map{ |article| article.magazine}
+    all_magazines.uniq
   end
 
+  def add_article(magazine, title)
+    Article.new(self, magazine, title)
+  end
+
+  def add_topic
+    magazines.collect{|magazine| magazine.category}.uniq
+  end
 
 end

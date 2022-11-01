@@ -1,6 +1,3 @@
-require_relative './author.rb'
-require_relative './magazine.rb'
-
 class Article
 
     attr_accessor :author, :magazine, :title
@@ -13,19 +10,6 @@ class Article
         @title = title
         @@all << self
     end
-
-    def title
-        @title
-    end
-
-    def author
-        @author
-    end
-
-    def magazine
-        @magazine
-    end
-
 
     def self.all
         @@all
